@@ -7,6 +7,9 @@ class CsvLoader():
 
         listOfList = []
         for oneLine in dat.readlines():
+            if oneLine.strip() == '':
+                listOfList.append([])
+                continue
             listOfList.append([type_fn(oneStr.strip()) for oneStr in oneLine.split(',')])
 
         dat.close()
