@@ -20,16 +20,16 @@ so u can just ignore the first 2 columns.
 the raw data has 12 columns
 first two columns are id.
 
-the following 10 columns are:&nbsp;
-'MDC_ECG_HEART_RATE'&nbsp;
-'MDC_ECG_TIME_PD_PR'&nbsp;
-'MDC_ECG_TIME_PD_QRS'&nbsp;
-'MDC_ECG_TIME_PD_QT'&nbsp;
-'MDC_ECG_TIME_PD_QTc'&nbsp;
-'MDC_ECG_ANGLE_P_FRONT'&nbsp;
-'MDC_ECG_ANGLE_QRS_FRONT'&nbsp;
-'MDC_ECG_ANGLE_T_FRONT'&nbsp;
-'RV5'&nbsp;
-'SV1'&nbsp;
+the following 10 columns are:  
+'MDC_ECG_HEART_RATE'  
+'MDC_ECG_TIME_PD_PR'  
+'MDC_ECG_TIME_PD_QRS'  
+'MDC_ECG_TIME_PD_QT'  
+'MDC_ECG_TIME_PD_QTc'  
+'MDC_ECG_ANGLE_P_FRONT'  
+'MDC_ECG_ANGLE_QRS_FRONT'  
+'MDC_ECG_ANGLE_T_FRONT'  
+'RV5'  
+'SV1'  
 
 i shuffled the raw data to shuffled_files
