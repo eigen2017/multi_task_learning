@@ -15,3 +15,7 @@ the sample in label file and data file are strictly aligned,
 
 so u can just ignore the first 2 columns.
 
+
+
+the data has 10 columns
+
