@@ -36,6 +36,13 @@ class MultiTaskFcModel:
         self.z6_norm = self._batch_norm(self.z6, name='z6_norm')
         self.a6 = tf.nn.sigmoid(self.z6_norm, name='a6')
 
+        self.my_prediction = self._get_predictions_from_float(self.a6, name='my_prediction')
+
+        self.precision_rate = self._get_statistic_rates(self.my_prediction, self.y, name='precision_rate')
+        self.recall_rate = self._get_statistic_rates(self.my_prediction, self.y, name='recall_rate')
+        see_precision_rate = tf.identity(self.precision_rate, name='see_precision_rate')
+        see_recall_rate = tf.identity(self.recall_rate, name='see_recall_rate')
+
         self.my_cost_compute = self._cost_compute(self.a6, self.y, name='my_cost_compute')
 
         self.my_optimize_op = tf.train.AdamOptimizer(1e-4).minimize(self.my_cost_compute, name='my_optimize_op')
@@ -60,8 +67,26 @@ class MultiTaskFcModel:
 
     def _cost_compute(self, yhat, y, name):
         with tf.variable_scope(name):
-            lost_core = tf.multiply(-1.0, y * tf.log(yhat + 1e-7) + (1 - y) * tf.log(1 - yhat  + 1e-7), name='lost_core')
+            lost_core = tf.multiply(-1.0, y * tf.log(yhat + 1e-7) + (1 - y) * tf.log(1 - yhat + 1e-7), name='lost_core')
             lost_batch = tf.reduce_mean(lost_core, axis=0, name='lost_batch')
             lost_stack = tf.reduce_sum(lost_batch, name='lost_stack')
             final_cost = tf.identity(lost_stack, name='final_cost')
         return final_cost
+
+    def _get_statistic_rates(self, my_prediction, y, name):
+        with tf.variable_scope(name):
+            true_positive_cnts = tf.reduce_sum(tf.multiply(my_prediction, y), axis=0, name='true_positive_cnts')
+            predicted_condition_positive_cnts = tf.reduce_sum(my_prediction, axis=0)
+            condition_positive_cnts = tf.reduce_sum(y, axis=0)
+            precision_rate = tf.div(true_positive_cnts, predicted_condition_positive_cnts)
+            recall_rate = tf.div(true_positive_cnts, condition_positive_cnts)
+            statistic_rates = tf.cond(tf.equal(name, 'precision_rate'), lambda:(tf.identity(precision_rate)), lambda:(tf.identity(recall_rate)), name='statistic_rates')
+        return statistic_rates
+
+    def _get_predictions_from_float(self, a6, name):
+        with tf.variable_scope(name):
+            my_greater = tf.greater(self.a6, 0.5, name='my_greater')
+            my_float = tf.to_float(my_greater, name='my_float')
+        return my_float
+
+

@@ -7,7 +7,7 @@ my_model = MultiTaskFcModel()
 
 writer = tf.summary.FileWriter('./log')
 writer.add_graph(tf.get_default_graph())
-
+exit()
 trainingDataLoader = TrainingDataLoader(256)
 
 sess = tf.Session()
