@@ -1,5 +1,5 @@
 import random
-
+import numpy as np
 
 class CsvLoader():
     def csv_to_listoflist(self, filename, type_fn):
@@ -49,13 +49,23 @@ class TrainingDataLoader():
             self._re_shuffle()
             return [], []
         self._batch_idx = self._batch_idx + 1
-        return self._dat[from_idx:to_idx], self._label[from_idx:to_idx],
+
+        data = self._dat[from_idx:to_idx]
+        label = self._label[from_idx:to_idx]
+
+        # data = np.array(data)
+        # label = np.array(label)
+        #
+        # data = np.reshape(data, (-1, 1, 10))
+        # label = np.reshape(label, (-1, 1, 33))
+
+        return data, label
 
 
 if __name__ == "__main__":
     trainingDataLoader = TrainingDataLoader(256)
     idx = 0
-    for _ in range(2):
+    for _ in range(1):
         while (True):
             data, label = trainingDataLoader.get_a_mini_batch()
             if (data == []):
