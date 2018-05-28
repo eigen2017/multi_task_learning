@@ -9,13 +9,6 @@ the according label represents the diagnoses of doctors.
 
 the label is from 0 to 32. that's 33 classes.
 
-the first 2 columns of label file and data file is sample id, 
-
-the sample in label file and data file are strictly aligned, 
-
-so u can just ignore the first 2 columns.
-
-
 
 the raw data has 12 columns
 first two columns are id.
@@ -32,4 +25,6 @@ the following 10 columns are:
 'RV5'  
 'SV1'  
 
-i shuffled the raw data to shuffled_files
+i shuffled the raw data to shuffled_files.csv in the raw data folder
+
+then 
