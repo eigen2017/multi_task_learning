@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0038e7c-8f32-44ca-90df-1e261a8d37c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model.py" afterPath="$PROJECT_DIR$/src/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/read_data.py" afterPath="$PROJECT_DIR$/src/read_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/train.py" afterPath="$PROJECT_DIR$/src/train.py" />
-    </list>
+    <list default="true" id="d0038e7c-8f32-44ca-90df-1e261a8d37c9" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
