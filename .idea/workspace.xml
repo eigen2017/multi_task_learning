@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0038e7c-8f32-44ca-90df-1e261a8d37c9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/dev_dat.csv" afterPath="$PROJECT_DIR$/data/dev_dat.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/dev_label.csv" afterPath="$PROJECT_DIR$/data/dev_label.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test_dat.csv" afterPath="$PROJECT_DIR$/data/test_dat.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test_label.csv" afterPath="$PROJECT_DIR$/data/test_label.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/train_dat.csv" afterPath="$PROJECT_DIR$/data/train_dat.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/train_label.csv" afterPath="$PROJECT_DIR$/data/train_label.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw_data/metrics_in_report.csv" afterPath="$PROJECT_DIR$/raw_data/metrics_in_report.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw_data/metrics_in_report_label.csv" afterPath="$PROJECT_DIR$/raw_data/metrics_in_report_label.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw_data/shuffled_metrics_in_report.csv" afterPath="$PROJECT_DIR$/raw_data/shuffled_metrics_in_report.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raw_data/shuffled_metrics_in_report_label.csv" afterPath="$PROJECT_DIR$/raw_data/shuffled_metrics_in_report_label.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/train.py" afterPath="$PROJECT_DIR$/src/train.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,21 +17,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/train.py">
+      <file leaf-file-name="predict.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="read_data.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="read_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/read_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+            <state relative-caret-position="228">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,7 +75,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="30" />
     <option name="y" value="166" />
     <option name="width" value="1882" />
@@ -171,7 +173,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1922" height="1019" extended-state="7" />
+    <frame x="-1" y="28" width="1922" height="1019" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -206,22 +208,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/predict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -230,10 +216,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/read_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        <state relative-caret-position="228">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
