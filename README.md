@@ -25,6 +25,9 @@ the following 10 columns are:
 'RV5'  
 'SV1'  
 
-i shuffled the raw data to shuffled_files.csv in the raw data folder
+i shuffled the raw data to:  
+shuffled_metrics_in_report_label.csv  
+shuffled_metrics_in_report.csv  
 
-then 
+then i sliced the shuffled raw data into the data folder  
+the data folder includes train\dev\test data
