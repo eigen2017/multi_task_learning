@@ -12,23 +12,23 @@ class MultiTaskFcModel:
 
         self.x_norm = self._batch_norm(self.x, name='x_norm')
 
-        self.z1 = tf.layers.dense(inputs=self.x_norm, units=20, name='z1')
+        self.z1 = tf.layers.dense(inputs=self.x_norm, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=20, name='z1')
         self.z1_norm = self._batch_norm(self.z1, name='z1_norm')
         self.a1 = tf.nn.relu(self.z1_norm, name='a1')
 
-        self.z2 = tf.layers.dense(inputs=self.a1, units=40, name='z2')
+        self.z2 = tf.layers.dense(inputs=self.a1, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=40, name='z2')
         self.z2_norm = self._batch_norm(self.z2, name='z2_norm')
         self.a2 = tf.nn.relu(self.z2_norm, name='a2')
 
-        self.z3 = tf.layers.dense(inputs=self.a2, units=80, name='z3')
+        self.z3 = tf.layers.dense(inputs=self.a2, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=80, name='z3')
         self.z3_norm = self._batch_norm(self.z3, name='z3_norm')
         self.a3 = tf.nn.relu(self.z3_norm, name='a3')
 
-        self.z4 = tf.layers.dense(inputs=self.a3, units=100, name='z4')
+        self.z4 = tf.layers.dense(inputs=self.a3, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=100, name='z4')
         self.z4_norm = self._batch_norm(self.z4, name='z4_norm')
         self.a4 = tf.nn.relu(self.z4_norm, name='a4')
 
-        self.z5 = tf.layers.dense(inputs=self.a4, units=60, name='z5')
+        self.z5 = tf.layers.dense(inputs=self.a4, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=60, name='z5')
         self.z5_norm = self._batch_norm(self.z5, name='z5_norm')
         self.a5 = tf.nn.relu(self.z5_norm, name='a5')
 
