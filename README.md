@@ -40,9 +40,12 @@ Date:   Tue May 29 19:58:49 2018 +0800
 
 base on this commit, i found that label: 3\13\18\21\24 are overfitting, 
 which means these classes has high corelationship with the 10 columns data. 
-so next step i will shrink the 33 classes to 5 classes,
-and continue to jump into solutions of overfitting problems.
+so next step i will shrink the 33 classes to 5 classes,  
+and continue to jump into solutions of overfitting problems.  
 
+so after commit[500c0aa46f223ddf033f39b35b152be79006b326],  
+let's jump into folder [data_with_shrinked_label], and the labels are mapped as:
+3\13\18\21\24   ----->   0/1/2/3/4
 
 
 
