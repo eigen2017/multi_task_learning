@@ -29,9 +29,9 @@ class TrainingDataLoader():
     def __init__(self, batch_size):
         self._batch_size = batch_size
         csvLoader = CsvLoader()
-        self._dat = csvLoader.csv_to_listoflist('../data/train_dat.csv', type_fn=float)
-        label = csvLoader.csv_to_listoflist('../data/train_label.csv', type_fn=int)
-        self._label = [csvLoader.get_multi_hot_label(range(33), src_word_list) for src_word_list in label]
+        self._dat = csvLoader.csv_to_listoflist('../data_with_shrinked_label/train_dat.csv', type_fn=float)
+        label = csvLoader.csv_to_listoflist('../data_with_shrinked_label/train_label.csv', type_fn=int)
+        self._label = [csvLoader.get_multi_hot_label(range(5), src_word_list) for src_word_list in label]
         self._sample_cnt = min(len(self._dat), len(self._label))
         self._re_shuffle()
 
@@ -52,12 +52,6 @@ class TrainingDataLoader():
 
         data = self._dat[from_idx:to_idx]
         label = self._label[from_idx:to_idx]
-
-        # data = np.array(data)
-        # label = np.array(label)
-        #
-        # data = np.reshape(data, (-1, 1, 10))
-        # label = np.reshape(label, (-1, 1, 33))
 
         return data, label
 

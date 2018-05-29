@@ -7,7 +7,7 @@ class MultiTaskFcModel:
 
     def _construct_graph(self):
         self.phase_train = tf.placeholder(tf.bool, name='phase_train')
-        self.y = tf.placeholder(tf.float32, shape=[None, 33], name='y')
+        self.y = tf.placeholder(tf.float32, shape=[None, 5], name='y')
         self.x = tf.placeholder(tf.float32, shape=[None, 10], name='x')
 
         self.x_norm = self._batch_norm(self.x, name='x_norm')
@@ -32,7 +32,7 @@ class MultiTaskFcModel:
         self.z5_norm = self._batch_norm(self.z5, name='z5_norm')
         self.a5 = tf.nn.relu(self.z5_norm, name='a5')
 
-        self.z6 = tf.layers.dense(inputs=self.a5, units=33, name='z6')
+        self.z6 = tf.layers.dense(inputs=self.a5, units=5, name='z6')
         self.z6_norm = self._batch_norm(self.z6, name='z6_norm')
         self.a6 = tf.nn.sigmoid(self.z6_norm, name='a6')
 
