@@ -12,27 +12,27 @@ class MultiTaskFcModel:
 
         self.x_norm = self._batch_norm(self.x, name='x_norm')
 
-        self.z1 = tf.layers.dense(self.x_norm, units=20, name='z1')
+        self.z1 = tf.layers.dense(inputs=self.x_norm, units=20, name='z1')
         self.z1_norm = self._batch_norm(self.z1, name='z1_norm')
         self.a1 = tf.nn.relu(self.z1_norm, name='a1')
 
-        self.z2 = tf.layers.dense(self.a1, units=40, name='z2')
+        self.z2 = tf.layers.dense(inputs=self.a1, units=40, name='z2')
         self.z2_norm = self._batch_norm(self.z2, name='z2_norm')
         self.a2 = tf.nn.relu(self.z2_norm, name='a2')
 
-        self.z3 = tf.layers.dense(self.a2, units=80, name='z3')
+        self.z3 = tf.layers.dense(inputs=self.a2, units=80, name='z3')
         self.z3_norm = self._batch_norm(self.z3, name='z3_norm')
         self.a3 = tf.nn.relu(self.z3_norm, name='a3')
 
-        self.z4 = tf.layers.dense(self.a3, units=100, name='z4')
+        self.z4 = tf.layers.dense(inputs=self.a3, units=100, name='z4')
         self.z4_norm = self._batch_norm(self.z4, name='z4_norm')
         self.a4 = tf.nn.relu(self.z4_norm, name='a4')
 
-        self.z5 = tf.layers.dense(self.a4, units=60, name='z5')
+        self.z5 = tf.layers.dense(inputs=self.a4, units=60, name='z5')
         self.z5_norm = self._batch_norm(self.z5, name='z5_norm')
         self.a5 = tf.nn.relu(self.z5_norm, name='a5')
 
-        self.z6 = tf.layers.dense(self.a5, units=33, name='z6')
+        self.z6 = tf.layers.dense(inputs=self.a5, units=33, name='z6')
         self.z6_norm = self._batch_norm(self.z6, name='z6_norm')
         self.a6 = tf.nn.sigmoid(self.z6_norm, name='a6')
 
@@ -78,8 +78,8 @@ class MultiTaskFcModel:
             true_positive_cnts = tf.reduce_sum(tf.multiply(my_prediction, y), axis=0, name='true_positive_cnts')
             predicted_condition_positive_cnts = tf.reduce_sum(my_prediction, axis=0)
             condition_positive_cnts = tf.reduce_sum(y, axis=0)
-            precision_rate = tf.div(true_positive_cnts, predicted_condition_positive_cnts)
-            recall_rate = tf.div(true_positive_cnts, condition_positive_cnts)
+            precision_rate = tf.div(true_positive_cnts, predicted_condition_positive_cnts + 1e-7)
+            recall_rate = tf.div(true_positive_cnts, condition_positive_cnts + 1e-7)
             statistic_rates = tf.cond(tf.equal(name, 'precision_rate'), lambda:(tf.identity(precision_rate)), lambda:(tf.identity(recall_rate)), name='statistic_rates')
         return statistic_rates
 

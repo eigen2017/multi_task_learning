@@ -19,8 +19,11 @@ for one_iteration in range(10000):
         data, label = trainingDataLoader.get_a_mini_batch()
         if (data == []):
             break
-        _, my_cost_compute = sess.run([my_model.my_optimize_op, my_model.my_cost_compute], feed_dict={my_model.x: data, my_model.y: label, my_model.phase_train: True})
-        print('my_cost_compute:' + str(my_cost_compute))
+        _, precision_rate, recall_rate = sess.run([my_model.my_optimize_op, my_model.precision_rate, my_model.recall_rate], feed_dict={my_model.x: data, my_model.y: label, my_model.phase_train: True})
+        print('precision_rate:')
+        print(precision_rate)
+        print('recall_rate:')
+        print(recall_rate)
 
     print('epoch:[' + str(one_iteration) + ']')
 
