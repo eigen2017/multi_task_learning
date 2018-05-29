@@ -31,3 +31,18 @@ shuffled_metrics_in_report.csv
 
 then i sliced the shuffled raw data into the data folder  
 the data folder includes train\dev\test data
+
+
+# development log
+
+commit 500c0aa46f223ddf033f39b35b152be79006b326  
+Date:   Tue May 29 19:58:49 2018 +0800  
+
+base on this commit, i found that label: 3\13\18\21\24 are overfitting, 
+which means these classes has high corelationship with the 10 columns data. 
+so next step i will shrink the 33 classes to 5 classes,
+and continue to jump into solutions of overfitting problems.
+
+
+
+
