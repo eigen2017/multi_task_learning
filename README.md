@@ -1,11 +1,15 @@
 # multi_task_learning
 
+## summary
+
 multi task learning model using tensorflow
 
-the raw data is metrics in ecg reports.
+the raw data is metrics on ecg reports.
 
 the according label represents the diagnoses of doctors.
 
+
+## data demostration
 
 the label is from 0 to 32. that's 33 classes.
 
@@ -33,8 +37,17 @@ then i sliced the shuffled raw data into the data folder
 the data folder includes train\dev\test data
 
 
-# development log
-## shrink the classes
+## development procedure log
+
+### about precision and recall  
+because this project is based on real medical data,    
+so the samples are labeled as imbalanced classes,  
+precision and recall estimation is best suit imbalanced sample at this time.  
+this paper gave a quick experiment on traditionally ROC and precision-recall,   
+and the conclusion shows that,   
+precision-recall is more informative when facing imbalanced data.  
+
+### shrink the classes
 commit 500c0aa46f223ddf033f39b35b152be79006b326  
 Date:   Tue May 29 19:58:49 2018 +0800  
 
@@ -51,7 +64,8 @@ and the labels are mapped as:
 3\13\18\21\24   ----->   0/1/2/3/4
 
 
-## to be overfitting
+
+### to be overfitting
 commit 8372f6f558538d686d2b117bd276421226252a70  
 Author: jakie <jakie@localhost.localdomain>  
 Date:   Wed May 30 14:39:54 2018 +0800  
