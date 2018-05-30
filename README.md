@@ -89,6 +89,46 @@ it's worthwhile to mention that, i am using adam optimizer,
 which means it has adventages cause of the momentum and RMS probability mechanism in it.   
 
 
+### overfitting judgement
+it's the very first destination of neuro network adjustment: to be overfitting.  
+if u don't know how to judge overfitting, u won't know weather u arrived the first target.  
+i judge overfitting easily by precision-recall rate of the last batch of every epoch.  
+after thousands of epochs, the output is like:
+epoch:[4861]  
+precision_rate:  
+[ 0.91525424  0.96342856  0.80000001  0.90322578  0.84210527]  
+recall_rate:  
+[ 0.77142859  0.99059927  0.66666669  0.875       0.94117647]  
+f1_score:  
+[ 0.83720922  0.97682494  0.72727269  0.88888878  0.88888884]  
+epoch:[4862]  
+precision_rate:  
+[ 0.80327868  0.96351194  0.80000001  0.83870965  0.83765113]  
+recall_rate:  
+[ 0.89090908  0.98599768  0.5         0.89655173  0.91856062]  
+f1_score:  
+[ 0.84482753  0.97462511  0.61538458  0.86666656  0.87624204]  
+
+
+so it's overfitting .  
+while the standard way to judge overfitting is give the train set and dev set accurracy a contrast.  
+just like:
+
+epoch:[44]
+precision_rate:
+[ 0.60000002  0.94438136  0.66666669  0.53488374  0.77464789]
+[ 0.58031088  0.94480139  0.51428574  0.65151513  0.7652247 ]
+recall_rate:
+[ 0.94117647  0.97082847  0.66666669  0.95833331  0.88709676]
+[ 0.93723851  0.97176331  0.69230771  0.88356167  0.86638135]
+f1_score:
+[ 0.73282439  0.95742232  0.66666663  0.68656713  0.82706761]
+[ 0.71679991  0.95809263  0.59016389  0.74999988  0.81266713]
+
+
+
+
+
 
 
 
