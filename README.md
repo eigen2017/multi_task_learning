@@ -34,7 +34,7 @@ the data folder includes train\dev\test data
 
 
 # development log
-
+## shrink the classes
 commit 500c0aa46f223ddf033f39b35b152be79006b326  
 Date:   Tue May 29 19:58:49 2018 +0800  
 
