@@ -19,15 +19,17 @@ for one_iteration in range(10000):
         data, label = trainingDataLoader.get_a_mini_batch()
         if (data == []):
             break
-        _, precision_rate, recall_rate = sess.run([my_model.my_optimize_op, my_model.precision_rate, my_model.recall_rate], feed_dict={my_model.x: data, my_model.y: label, my_model.phase_train: True})
+        _, precision_rate, recall_rate, see_a5, see_a6 = sess.run([my_model.my_optimize_op,
+                                                                   my_model.precision_rate,
+                                                                   my_model.recall_rate, my_model.see_a5, my_model.see_a6],
+                                                                  feed_dict={my_model.x: data, my_model.y: label, my_model.phase_train: True})
 
     print('epoch:[' + str(one_iteration) + ']')
     print('precision_rate:')
     print(precision_rate)
     print('recall_rate:')
     print(recall_rate)
-
-
-
+    print(see_a5)
+    print(see_a6)
 
 sess.close()

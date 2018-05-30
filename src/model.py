@@ -16,6 +16,7 @@ class MultiTaskFcModel:
         self.z1_norm = self._batch_norm(self.z1, name='z1_norm')
         self.a1 = tf.nn.relu(self.z1_norm, name='a1')
 
+
         self.z2 = tf.layers.dense(inputs=self.a1, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=40, name='z2')
         self.z2_norm = self._batch_norm(self.z2, name='z2_norm')
         self.a2 = tf.nn.relu(self.z2_norm, name='a2')
@@ -28,13 +29,27 @@ class MultiTaskFcModel:
         self.z4_norm = self._batch_norm(self.z4, name='z4_norm')
         self.a4 = tf.nn.relu(self.z4_norm, name='a4')
 
-        self.z5 = tf.layers.dense(inputs=self.a4, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=60, name='z5')
+        self.z4_1 = tf.layers.dense(inputs=self.a4, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=90, name='z4_1')
+        self.z4_1_norm = self._batch_norm(self.z4_1, name='z4_1_norm')
+        self.a4_1 = tf.nn.relu(self.z4_1_norm, name='a4_1')
+
+        self.z4_2 = tf.layers.dense(inputs=self.a4_1, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=80, name='z4_2')
+        self.z4_2_norm = self._batch_norm(self.z4_2, name='z4_2_norm')
+        self.a4_2 = tf.nn.relu(self.z4_2_norm, name='a4_2')
+
+        self.z4_3 = tf.layers.dense(inputs=self.a4_2, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=70, name='z4_3')
+        self.z4_3_norm = self._batch_norm(self.z4_3, name='z4_3_norm')
+        self.a4_3 = tf.nn.relu(self.z4_3_norm, name='a4_3')
+
+        self.z5 = tf.layers.dense(inputs=self.a4_3, kernel_initializer=tf.contrib.layers.variance_scaling_initializer(), units=60, name='z5')
         self.z5_norm = self._batch_norm(self.z5, name='z5_norm')
         self.a5 = tf.nn.relu(self.z5_norm, name='a5')
+        self.see_a5 = tf.reduce_mean(self.a5, axis=0)
 
         self.z6 = tf.layers.dense(inputs=self.a5, units=5, name='z6')
         self.z6_norm = self._batch_norm(self.z6, name='z6_norm')
         self.a6 = tf.nn.sigmoid(self.z6_norm, name='a6')
+        self.see_a6 = tf.reduce_mean(self.a6, axis=0)
 
         self.my_prediction = self._get_predictions_from_float(self.a6, name='my_prediction')
 
