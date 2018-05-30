@@ -125,6 +125,17 @@ f1_score:
 [ 0.71679991  0.95809263  0.59016389  0.74999988  0.81266713]  
 
 
+### training set and dev set has nearly the same accuracy  
+after thousands of epochs, i am supprised to find that,   
+there isn't a big gap between the training and testing accuracy:  
+f1_score:
+[ 0.77358478  0.97388268  0.83333331  0.9523809   0.86861306]
+[ 0.72908366  0.95363641  0.62499994  0.77655673  0.75324053]
+
+so firstly i change the traing set measure strategy .  
+formally, i jus look at the precision-recall rate of the last batch of every epoch.  
+now, i
+
 ### solve the overfitting issue
 
 
