@@ -71,7 +71,8 @@ i also implemented he-kaiming weights init for relu activation funcs
 i printed the units of the last two layers in this version,  
 and seeing that the units value are not too large or too small  
 
-
+it's worthwhile to mention that, i am using adam optimizer, 
+which means it has adventages cause of the momentum and RMS probability mechanism in it.
 
 
 
