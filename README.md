@@ -38,6 +38,8 @@ the data folder includes train\dev\test data
 commit 500c0aa46f223ddf033f39b35b152be79006b326  
 Date:   Tue May 29 19:58:49 2018 +0800  
 
+after 10000 epochs, only five classes has precision and recall rate that not tend to 0
+
 base on this commit, i found that label: 3\13\18\21\24 are overfitting, 
 which means these classes has high corelationship with the 10 columns data. 
 so next step i will shrink the 33 classes to 5 classes,  
@@ -49,10 +51,25 @@ and the labels are mapped as:
 3\13\18\21\24   ----->   0/1/2/3/4
 
 
-
+## to be overfitting
 commit 8372f6f558538d686d2b117bd276421226252a70  
 Author: jakie <jakie@localhost.localdomain>  
 Date:   Wed May 30 14:39:54 2018 +0800  
+
+after 200 epochs, the five classes overfitted very slowly,  
+so i added 3 layers with 100 units per layer,  
+and after 6000 epochs, 5 classes all overfitted. 
+
+many articles suggested that,  
+initialization of input and do batch norm can accelerate the convergency.  
+i applied input init and batch norm at the very first time.  
+and the effection has not been estimated, 
+because i didn't try the model without initializations of input and without batch norm.
+
+as to the exploding and vanishing problem,  
+i also implemented he-kaiming weights init for relu activation funcs  
+i printed the units of the last two layers in this version,  
+and seeing that the units value are not too large or too small  
 
 
 
