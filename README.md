@@ -60,19 +60,19 @@ after 200 epochs, the five classes overfitted very slowly,
 so i added 3 layers with 100 units per layer,  
 and after 6000 epochs, 5 classes all overfitted. 
 
-many articles suggested that,  
-initialization of input and do batch norm can accelerate the convergency.  
-i applied input init and batch norm at the very first time.  
-and the effection has not been estimated, 
-because i didn't try the model without initializations of input and without batch norm.
+many articles suggested that,   
+initialization of input and do batch norm can accelerate the convergency.    
+i applied input init and batch norm at the very first time.    
+and the effection has not been estimated,   
+because i didn't try the model without initializations of input and without batch norm.   
 
-as to the exploding and vanishing problem,  
-i also implemented he-kaiming weights init for relu activation funcs  
-i printed the units of the last two layers in this version,  
-and seeing that the units value are not too large or too small  
+as to the exploding and vanishing problem,    
+i also implemented he-kaiming weights init for relu activation funcs   
+i printed the units of the last two layers in this version,    
+and seeing that the units value are not too large or too small    
 
-it's worthwhile to mention that, i am using adam optimizer, 
-which means it has adventages cause of the momentum and RMS probability mechanism in it.
+it's worthwhile to mention that, i am using adam optimizer,    
+which means it has adventages cause of the momentum and RMS probability mechanism in it.   
 
 
 
