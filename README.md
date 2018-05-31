@@ -132,9 +132,35 @@ f1_score:
 [ 0.77358478  0.97388268  0.83333331  0.9523809   0.86861306]
 [ 0.72908366  0.95363641  0.62499994  0.77655673  0.75324053]
 
-so firstly i change the traing set measure strategy .  
-formally, i jus look at the precision-recall rate of the last batch of every epoch.  
-now, i
+so firstly i change the traing set measure strategy .   
+formally, i jus look at the precision-recall rate of the last batch of every epoch.     
+now, i make a prediction of the entire training set and calculate the precision-recall rate.   
+so now i use the standard way of overfitting judgement: training set accuarcy vs dev set accuarcy.    
+
+now the accuracy of training set changes smoothly from epoch to epoch.   
+epoch:[54]   
+f1_score:   
+[ 0.77388775  0.96709293  0.82253087  0.84310782  0.8334958 ]   
+[ 0.78799999  0.96371841  0.73469383  0.80272108  0.83031219]   
+epoch:[55]   
+f1_score:   
+[ 0.78775996  0.96933049  0.81846625  0.84646732  0.83268845]   
+[ 0.77992266  0.96576035  0.69230765  0.79715294  0.82712758]   
+epoch:[56]   
+f1_score:   
+[ 0.77206451  0.96964955  0.82556379  0.84699982  0.83193547]   
+[ 0.78068405  0.96725875  0.70588231  0.8188405   0.82594156]   
+
+### wishing to get the big gap
+actrually, i still didn't see a big gap between training set and dev set accuracy.  
+there are 2 reasons for that:   
+1. ceiling has been reached according to the co-relationship limit between data and label.   
+2. there is still avoidable bias,   
+   that's means training set accuracy could be improved by more neuro units and more epochs.   
+   
+
+   
+   
 
 ### solve the overfitting issue
 
