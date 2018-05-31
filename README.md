@@ -151,6 +151,36 @@ f1_score:
 [ 0.77206451  0.96964955  0.82556379  0.84699982  0.83193547]   
 [ 0.78068405  0.96725875  0.70588231  0.8188405   0.82594156]   
 
+### model gradient checking
+even at the very first epoch, the accuracy of the training and dev set are very high.  
+so i suspected that is there any bug in the model, so i inversed the dev label,  
+the accuracy of dev set became very low:  
+
+epoch:[15]   
+precision_rate:  
+[ 0.72294486  0.94651884  0.80645162  0.79794079  0.75523823]  
+[ 0.27372262  0.05391454  0.25        0.21710527  0.22925226]  
+recall_rate:  
+[ 0.81091332  0.99103498  0.69984448  0.84033614  0.90678781]  
+[ 0.01994151  0.28017884  0.00150981  0.00856253  0.29414865]  
+f1_score:  
+[ 0.76440644  0.96826541  0.74937546  0.81858987  0.82410353]  
+[ 0.03717471  0.09042806  0.0030015   0.01647528  0.25767717]  
+epoch:[16]  
+precision_rate:  
+[ 0.72139692  0.93869275  0.82889736  0.82721323  0.75196791]  
+[ 0.26394051  0.06506365  0.2         0.1970803   0.23665048]  
+recall_rate:  
+[ 0.80770355  0.99342096  0.67807156  0.78774738  0.91101015]  
+[ 0.01887796  0.34277198  0.00100654  0.00700571  0.30838165]  
+f1_score:  
+[ 0.76211452  0.96528172  0.74593663  0.80699795  0.82388377]  
+[ 0.03523572  0.10936755  0.002003    0.01353044  0.26779577]  
+
+and i printed the training cost of every batch of every epoch,  
+the cost goes down very quikly.   
+so the gradient descent behavior of the model is normal.  
+
 ### wishing to get the big gap
 actrually, i still didn't see a big gap between training set and dev set accuracy.  
 there are 2 reasons for that:   
