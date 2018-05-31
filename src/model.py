@@ -12,7 +12,7 @@ class MultiTaskFcModel:
 
         self.x_norm = self._batch_norm(self.x, name='x_norm')
 
-        self.z1 = tf.layers.dense(inputs=self.x_norm, units=20, name='z1')
+        self.z1 = tf.layers.dense(inputs=self.x_norm, kernel_initializer=tf.keras.initializers.he_normal(), units=20, name='z1')
         self.z1_norm = self._batch_norm(self.z1, name='z1_norm')
         self.a1 = tf.nn.relu(self.z1_norm, name='a1')
 
