@@ -56,7 +56,7 @@ class MultiTaskFcModel:
 
         self.my_cost_compute = self._cost_compute(self.a6, self.y, name='my_cost_compute')
 
-        self.my_optimize_op = tf.train.AdamOptimizer(1e-4).minimize(self.my_cost_compute, name='my_optimize_op')
+        self.my_optimize_op = tf.train.AdamOptimizer(1e-2).minimize(self.my_cost_compute, name='my_optimize_op')
 
     def _batch_norm(self, x, name):
         with tf.variable_scope(name):
