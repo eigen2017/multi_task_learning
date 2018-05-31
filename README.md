@@ -46,6 +46,7 @@ precision and recall estimation is best suit imbalanced sample at this time.
 this paper gave a quick experiment on traditionally ROC and precision-recall,   
 and the conclusion shows that,   
 precision-recall is more informative when facing imbalanced data.  
+https://classeval.wordpress.com/simulation-analysis/roc-and-precision-recall-with-imbalanced-datasets/  
 
 ### shrink the classes
 commit 500c0aa46f223ddf033f39b35b152be79006b326  
