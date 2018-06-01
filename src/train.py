@@ -12,11 +12,11 @@ trainingDataLoader = BatchDataLoader(1024, '../data_with_shrinked_label/train_da
 devDataLoader = BatchDataLoader(4000, '../data_with_shrinked_label/dev_dat.csv', '../data_with_shrinked_label/dev_label.csv')
 traingAccDataLoader = BatchDataLoader(120000, '../data_with_shrinked_label/train_dat.csv', '../data_with_shrinked_label/train_label.csv')
 dev_data, dev_label = devDataLoader.get_a_mini_batch()
-# dev_label = 1 - np.array(dev_label)
 train_acc_data, train_acc_label = traingAccDataLoader.get_a_mini_batch()
 
 
 config = tf.ConfigProto()
+
 config.gpu_options.per_process_gpu_memory_fraction = 0.4
 sess = tf.Session(config=config)
 
