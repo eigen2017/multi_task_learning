@@ -46,6 +46,7 @@ precision and recall estimation is best suit imbalanced sample at this time.
 this paper gave a quick experiment on traditionally ROC and precision-recall,   
 and the conclusion shows that,   
 precision-recall is more informative when facing imbalanced data.  
+https://classeval.wordpress.com/simulation-analysis/roc-and-precision-recall-with-imbalanced-datasets/  
 
 ### shrink the classes
 commit 500c0aa46f223ddf033f39b35b152be79006b326  
@@ -132,9 +133,75 @@ f1_score:
 [ 0.77358478  0.97388268  0.83333331  0.9523809   0.86861306]
 [ 0.72908366  0.95363641  0.62499994  0.77655673  0.75324053]
 
-so firstly i change the traing set measure strategy .  
-formally, i jus look at the precision-recall rate of the last batch of every epoch.  
-now, i
+so firstly i change the traing set measure strategy .   
+formally, i jus look at the precision-recall rate of the last batch of every epoch.     
+now, i make a prediction of the entire training set and calculate the precision-recall rate.   
+so now i use the standard way of overfitting judgement: training set accuarcy vs dev set accuarcy.    
+
+now the accuracy of training set changes smoothly from epoch to epoch.   
+epoch:[54]   
+f1_score:   
+[ 0.77388775  0.96709293  0.82253087  0.84310782  0.8334958 ]   
+[ 0.78799999  0.96371841  0.73469383  0.80272108  0.83031219]   
+epoch:[55]   
+f1_score:   
+[ 0.78775996  0.96933049  0.81846625  0.84646732  0.83268845]   
+[ 0.77992266  0.96576035  0.69230765  0.79715294  0.82712758]   
+epoch:[56]   
+f1_score:   
+[ 0.77206451  0.96964955  0.82556379  0.84699982  0.83193547]   
+[ 0.78068405  0.96725875  0.70588231  0.8188405   0.82594156]   
+
+### model gradient checking
+even at the very first epoch, the accuracy of the training and dev set are very high.  
+so i suspected that is there any bug in the model, so i inversed the dev label,  
+the accuracy of dev set became very low:  
+
+epoch:[15]   
+precision_rate:  
+[ 0.72294486  0.94651884  0.80645162  0.79794079  0.75523823]  
+[ 0.27372262  0.05391454  0.25        0.21710527  0.22925226]  
+recall_rate:  
+[ 0.81091332  0.99103498  0.69984448  0.84033614  0.90678781]  
+[ 0.01994151  0.28017884  0.00150981  0.00856253  0.29414865]  
+f1_score:  
+[ 0.76440644  0.96826541  0.74937546  0.81858987  0.82410353]  
+[ 0.03717471  0.09042806  0.0030015   0.01647528  0.25767717]  
+epoch:[16]  
+precision_rate:  
+[ 0.72139692  0.93869275  0.82889736  0.82721323  0.75196791]  
+[ 0.26394051  0.06506365  0.2         0.1970803   0.23665048]  
+recall_rate:  
+[ 0.80770355  0.99342096  0.67807156  0.78774738  0.91101015]  
+[ 0.01887796  0.34277198  0.00100654  0.00700571  0.30838165]  
+f1_score:  
+[ 0.76211452  0.96528172  0.74593663  0.80699795  0.82388377]  
+[ 0.03523572  0.10936755  0.002003    0.01353044  0.26779577]  
+
+and i printed the training cost of every batch of every epoch,  
+the cost goes down very quikly.   
+so the gradient descent behavior of the model is normal.  
+
+### wishing to get the big gap
+actrually, i still didn't see a big gap between training set and dev set accuracy.  
+there are 2 reasons for that:   
+1. ceiling has been reached according to the co-relationship limit between data and label.   
+2. there is still avoidable bias,   
+   that's means training set accuracy could be improved by more neuro units and more epochs.   
+   
+after i added layers, the gap finally came back:  
+epoch:[2283]  
+precision_rate:  
+[ 0.98406488  0.99627608  0.99072641  0.99287474  0.96681172]  
+[ 0.68888891  0.94044811  0.63999999  0.828125    0.75998122]  
+recall_rate:  
+[ 0.99110007  0.99624628  0.99688959  0.98210895  0.97745955]  
+[ 0.64853555  0.95824569  0.61538464  0.72602737  0.76937705]  
+f1_score:  
+[ 0.98756987  0.99626112  0.99379838  0.98746246  0.9721064 ]  
+[ 0.66810334  0.94926339  0.62745088  0.77372253  0.76465017]  
+   
+   
 
 ### solve the overfitting issue
 
