@@ -1,5 +1,6 @@
 import tensorflow as tf
 import numpy as np
+
 from model import MultiTaskFcModel
 from read_data import BatchDataLoader
 
@@ -7,7 +8,7 @@ my_model = MultiTaskFcModel()
 
 writer = tf.summary.FileWriter('./log')
 writer.add_graph(tf.get_default_graph())
-# exit()
+exit()
 trainingDataLoader = BatchDataLoader(1024, '../data_with_shrinked_label/train_dat.csv', '../data_with_shrinked_label/train_label.csv')
 devDataLoader = BatchDataLoader(4000, '../data_with_shrinked_label/dev_dat.csv', '../data_with_shrinked_label/dev_label.csv')
 traingAccDataLoader = BatchDataLoader(120000, '../data_with_shrinked_label/train_dat.csv', '../data_with_shrinked_label/train_label.csv')
