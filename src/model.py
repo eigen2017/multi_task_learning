@@ -91,7 +91,7 @@ class MultiTaskFcModel:
                 with tf.variable_scope('test_func'):
                     return tf.identity(ema.average(moments_mean), name='test_main'), tf.identity(ema.average(moments_var), name='test_var')
 
-            mean, var = tf.cond(self.phase_train, mean_var_at_test_time, mean_var_with_update)
+            mean, var = tf.cond(self.phase_train, mean_var_with_update, mean_var_at_test_time)
 
             normed_core = tf.nn.batch_normalization(x, mean, var, beta, gamma, 1e-3)
             normed = tf.identity(normed_core, name='normed')
