@@ -47,3 +47,7 @@ INFO: loading config from /etc/shadowsocks/config.json
 2018/06/13 13:31:40 GET linux.teamviewer.com 27.662135ms
 2018/06/13 13:31:40 CONNECT mirrors.ustc.edu.cn:443 27.583333ms
 2018/06/13 13:31:51 CONNECT tags.tiqcdn.com:443 3m6.314485369s
+2018/06/13 13:32:05 CONNECT clients1.google.com:443 4m1.629891845s
+2018/06/13 13:32:14 CONNECT github.com:443 7.525330189s
+2018/06/13 13:32:17 CONNECT adservice.google.com:443 4m3.898359903s
+2018/06/13 13:32:43 CONNECT www.google.com:443 4m41.459248534s

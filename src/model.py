@@ -83,11 +83,6 @@ class MultiTaskFcModel:
             ema_apply_op = ema.apply([moments_mean, moments_var])
 
             def mean_var_with_update():
-<<<<<<< HEAD
-                ema_apply_op = ema.apply([batch_mean, batch_var])
-                with tf.control_dependencies([ema_apply_op]):
-                    return tf.identity(batch_mean, name='train_batch_mean'), tf.identity(batch_var, name='train_batch_var')
-=======
                 with tf.variable_scope('train_func'):
                     with tf.control_dependencies([ema_apply_op]):
                         return tf.identity(moments_mean, name='train_mean'), tf.identity(moments_var, name='train_var')
@@ -97,7 +92,6 @@ class MultiTaskFcModel:
                     return tf.identity(ema.average(moments_mean), name='test_main'), tf.identity(ema.average(moments_var), name='test_var')
 
             mean, var = tf.cond(self.phase_train, mean_var_with_update, mean_var_at_test_time)
->>>>>>> 42dc8f1518b2d94758861bb5313e964480cb1675
 
             normed_core = tf.nn.batch_normalization(x, mean, var, beta, gamma, 1e-3)
             normed = tf.identity(normed_core, name='normed')
