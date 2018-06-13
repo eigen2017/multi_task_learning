@@ -1,0 +1,13 @@
+INFO: loading config from /etc/shadowsocks/config.json
+2018-06-13 13:28:02 INFO     loading libcrypto from libcrypto.so.10
+2018/06/13 13:28:09 CONNECT github.com:443 2.952383192s
+2018/06/13 13:28:14 CONNECT www.google.com:443 11.628758834s
+2018/06/13 13:28:45 CONNECT fonts.gstatic.com:443 35.530217139s
+2018/06/13 13:28:45 CONNECT id.google.com:443 35.530997608s
+2018/06/13 13:28:45 CONNECT ssl.gstatic.com:443 35.532119428s
+2018/06/13 13:28:58 CONNECT app.yinxiang.com:443 13.472486805s
+2018/06/13 13:28:58 CONNECT app.yinxiang.com:443 13.570676226s
+2018/06/13 13:28:59 CONNECT app.yinxiang.com:443 13.877920467s
+2018/06/13 13:29:03 CONNECT app.yinxiang.com:443 17.6663841s
+2018/06/13 13:29:05 CONNECT datacloud-us-east-1.tealiumiq.com:443 19.912886766s
+2018/06/13 13:29:15 CONNECT datacloud-us-east-1.tealiumiq.com:443 29.722176522s
