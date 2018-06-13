@@ -1,5 +1,6 @@
 import tensorflow as tf
 import numpy as np
+
 from model import MultiTaskFcModel
 from read_data import BatchDataLoader
 
